@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOFT&WOOD — мебель из массива и лофта</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#14100c;--card:#1e1812;--accent:#c99a5b;--accent2:#e8c99a;--text:#f2ece4;--muted:#a89a88;}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+h1,h2,h3{font-family:'Playfair Display',serif}
+.container{max-width:1100px;margin:0 auto;padding:0 20px}
+section{padding:90px 0}
+.muted{color:var(--muted)}
+.grad{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+header{position:sticky;top:0;z-index:50;background:rgba(20,16,12,.85);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,154,91,.2)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:800}
+.logo span{color:var(--accent)}
+.nav a{color:var(--muted);text-decoration:none;margin-left:26px;font-size:15px;transition:.2s}
+.nav a:hover{color:var(--accent2)}
+.hero{padding:120px 0 100px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(201,154,91,.18),transparent 70%);top:-200px;right:-150px}
+.hero .container{position:relative;z-index:1}
+.kicker{display:inline-block;border:1px solid var(--accent);color:var(--accent2);padding:6px 16px;border-radius:30px;font-size:13px;letter-spacing:2px;text-transform:uppercase;margin-bottom:24px}
+.hero h1{font-size:clamp(36px,6vw,64px);font-weight:800;line-height:1.15;max-width:760px}
+.hero p{max-width:560px;margin:24px 0 36px;font-size:18px}
+.btn{display:inline-block;background:linear-gradient(90deg,var(--accent),#b8834a);color:#14100c;font-weight:600;padding:16px 40px;border-radius:8px;text-decoration:none;transition:.25s;box-shadow:0 0 24px rgba(201,154,91,.35)}
+.btn:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,154,91,.5)}
+.btn.ghost{background:transparent;color:var(--accent2);border:1px solid var(--accent);box-shadow:none;margin-left:14px}
+.stats{display:flex;gap:48px;margin-top:64px;flex-wrap:wrap}
+.stats b{font-family:'Playfair Display',serif;font-size:34px;display:block;color:var(--accent2)}
+.stats span{font-size:14px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;margin-top:48px}
+.card{background:var(--card);border:1px solid rgba(201,154,91,.15);border-radius:14px;overflow:hidden;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:rgba(201,154,91,.5);box-shadow:0 16px 40px rgba(0,0,0,.4)}
+.ph{height:190px;display:flex;align-items:center;justify-content:center;font-size:56px;background:linear-gradient(135deg,#2a2118,#1a140e)}
+.card-body{padding:22px}
+.card-body h3{font-size:20px;margin-bottom:6px}
+.price{color:var(--accent2);font-weight:600}
+.tag{display:inline-block;font-size:12px;color:var(--muted);border:1px solid rgba(168,154,136,.3);border-radius:20px;padding:2px 10px;margin-top:10px}
+.two-col{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:48px}
+.adv{background:var(--card);border-radius:14px;padding:28px;border-left:3px solid var(--accent)}
+.adv .ico{font-size:32px}
+.adv h3{font-size:19px;margin:12px 0 8px}
+.step{display:flex;gap:24px;align-items:flex-start;padding:22px 0;border-bottom:1px solid rgba(201,154,91,.12)}
+.step b{font-family:'Playfair Display',serif;font-size:40px;color:var(--accent);opacity:.6;min-width:70px}
+.step h3{font-size:20px}
+.step p{color:var(--muted);margin-top:4px}
+.cta{background:linear-gradient(135deg,#241a10,#181209);border:1px solid rgba(201,154,91,.3);border-radius:20px;text-align:center;padding:70px 30px}
+.cta h2{font-size:clamp(28px,4vw,42px);margin-bottom:16px}
+footer{padding:34px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid rgba(201,154,91,.15)}
+footer a{color:var(--accent2)}
+.reveal{opacity:0;transform:translateY(28px);transition:.7s ease}
+.reveal.on{opacity:1;transform:none}
+@media(max-width:640px){.btn.ghost{margin-left:0;margin-top:14px}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container nav">
+    <div class="logo">LOFT<span>&</span>WOOD</div>
+    <nav>
+      <a href="#catalog">Каталог</a>
+      <a href="#why">Почему мы</a>
+      <a href="#steps">Доставка</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+  </div>
+</header>
+<section class="hero">
+  <div class="container">
+    <span class="kicker">Мебель из массива · Дуб, ясень, орех</span>
+    <h1>Мебель, которая <span class="grad">переживёт ремонт</span>, переезд и моду</h1>
+    <p class="muted">Собственное производство лофт-мебели из цельного массива. Столы, стеллажи, кровати — по вашим размерам за 10–14 дней.</p>
+    <a class="btn" href="#contact">Рассчитать стоимость</a>
+    <a class="btn ghost" href="#catalog">Смотреть каталог</a>
+    <div class="stats">
+      <div><b>12 лет</b><span>на рынке мебели</span></div>
+      <div><b>3 400+</b><span>изделий изготовлено</span></div>
+      <div><b>2 года</b><span>гарантии на каждое изделие</span></div>
+    </div>
+  </div>
+</section>
+<section id="catalog">
+  <div class="container">
+    <h2 class="reveal">Хиты <span class="grad">каталога</span></h2>
+    <p class="muted reveal">Цены — за базовые размеры. Любое изделие делаем под ваши габариты.</p>
+    <div class="grid">
+      <div class="card reveal"><div class="ph">🪑</div><div class="card-body"><h3>Стол «Лофт»</h3><p class="muted">Массив дуба, металлокаркас, 180×90 см</p><p class="price">от 34 900 ₽</p><span class="tag">под заказ</span></div></div>
+      <div class="card reveal"><div class="ph">🗄️</div><div class="card-body"><h3>Стеллаж «Грид»</h3><p class="muted">Сосна + сталь, 5 полок, 200×100 см</p><p class="price">от 27 500 ₽</p><span class="tag">под заказ</span></div></div>
+      <div class="card reveal"><div class="ph">🛏️</div><div class="card-body"><h3>Кровать «Массив»</h3><p class="muted">Дуб, подъёмный механизм, 160×200 см</p><p class="price">от 52 000 ₽</p><span class="tag">под заказ</span></div></div>
+      <div class="card reveal"><div class="ph">🪞</div><div class="card-body"><h3>Комод «Норд»</h3><p class="muted">Ясень, мягкое закрытие, 4 ящика</p><p class="price">от 31 200 ₽</p><span class="tag">в наличии</span></div></div>
+    </div>
+  </div>
+</section>
+<section id="why">
+  <div class="container">
+    <h2 class="reveal">Почему выбирают <span class="grad">нас</span></h2>
+    <div class="two-col">
+      <div class="adv reveal"><div class="ico">🌳</div><h3>Массив, а не шпон</h3><p class="muted">Только цельное дерево камерной сушки — мебель не ведёт и не рассыхается.</p></div>
+      <div class="adv reveal"><div class="ico">📐</div><h3>Любые размеры</h3><p class="muted">Замерщик приезжает бесплатно, изделие рисуем в 3D до оплаты.</p></div>
+      <div class="adv reveal"><div class="ico">🚚</div><h3>Доставка и сборка</h3><p class="muted">Привозим, собираем, выносим упаковку. По городу — бесплатно от 30 000 ₽.</p></div>
+      <div class="adv reveal"><div class="ico">🛡️</div><h3>Гарантия 2 года</h3><p class="muted">Ремонт или замена по гарантии — без споров и «экспертиз».</p></div>
+    </div>
+  </div>
+</section>
+<section id="steps">
+  <div class="container">
+    <h2 class="reveal">Как проходит <span class="grad">заказ</span></h2>
+    <div style="margin-top:32px">
+      <div class="step reveal"><b>01</b><div><h3>Заявка и эскиз</h3><p>Присылаете фото или идею — за 1 день готовим эскиз и точную смету.</p></div></div>
+      <div class="step reveal"><b>02</b><div><h3>3D-модель и предоплата 30%</h3><p>Утверждаем визуализацию, фиксируем цену и сроки в договоре.</p></div></div>
+      <div class="step reveal"><b>03</b><div><h3>Производство 10–14 дней</h3><p>Присылаем фотоотчёт с производства на каждом этапе.</p></div></div>
+      <div class="step reveal"><b>04</b><div><h3>Доставка и сборка</h3><p>Привозим в оговорённый день, собираем, вы принимаете работу.</p></div></div>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <div class="container">
+    <div class="cta reveal">
+      <h2>Пришлём каталог и рассчитаем <span class="grad">ваш проект</span></h2>
+      <p class="muted" style="margin-bottom:28px">Ответим в мессенджере в течение 15 минут в рабочее время.</p>
+      <a class="btn" href="https://t.me/tvinnkk">Написать в Telegram</a>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="container">LOFT&WOOD · Шоурум: г. Москва, ул. Примерная, 1 · <a href="tel:+79000000000">+7 900 000-00-00</a></div>
+</footer>
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>

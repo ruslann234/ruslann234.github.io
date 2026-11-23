@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ЕГЭ ПРО — онлайн-школа подготовки к ЕГЭ на 90+</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Arial, sans-serif; }
+  :root { --dark:#0e1530; --accent:#ff7a1a; --light:#f6f7fb; --text:#2b2f3a; }
+  body { background:var(--light); color:var(--text); line-height:1.6; }
+  h2 { font-size:2rem; color:var(--dark); margin-bottom:24px; }
+  section { padding:70px 6%; max-width:1200px; margin:0 auto; }
+
+  header { position:sticky; top:0; background:var(--dark); color:#fff; display:flex;
+    justify-content:space-between; align-items:center; padding:16px 6%; z-index:100; }
+  .logo { font-weight:800; font-size:1.3rem; }
+  .logo span { color:var(--accent); }
+  nav a { color:#cfd6e4; text-decoration:none; margin-left:24px; font-size:.95rem; transition:.2s; }
+  nav a:hover { color:var(--accent); }
+
+  .hero { background:linear-gradient(135deg,#0e1530 60%,#1b2a5e); color:#fff; text-align:center;
+    padding:110px 6% 90px; }
+  .hero h1 { font-size:3rem; max-width:800px; margin:0 auto 20px; }
+  .hero h1 em { color:var(--accent); font-style:normal; }
+  .hero p { color:#c4cde3; max-width:620px; margin:0 auto 34px; font-size:1.15rem; }
+  .btn { display:inline-block; background:var(--accent); color:#fff; padding:16px 42px;
+    border-radius:50px; text-decoration:none; font-weight:700; font-size:1.05rem;
+    transition:.25s; box-shadow:0 8px 24px rgba(255,122,26,.35); }
+  .btn:hover { transform:translateY(-3px); }
+  .hero .stat { margin-top:40px; display:flex; gap:50px; justify-content:center; flex-wrap:wrap; }
+  .hero .stat div b { font-size:1.8rem; color:var(--accent); display:block; }
+
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:24px; }
+  .card { background:#fff; border-radius:18px; padding:30px; box-shadow:0 6px 20px rgba(14,21,48,.07);
+    transition:.25s; }
+  .card:hover { transform:translateY(-6px); }
+  .card .num { font-size:2rem; font-weight:800; color:var(--accent); }
+  .card h3 { margin:10px 0 8px; color:var(--dark); }
+
+  .price-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:26px; }
+  .plan { background:#fff; border-radius:20px; padding:34px; text-align:center;
+    border:2px solid transparent; transition:.25s; }
+  .plan.popular { border-color:var(--accent); transform:scale(1.04); }
+  .plan h3 { color:var(--dark); font-size:1.3rem; }
+  .plan .price { font-size:2.2rem; font-weight:800; color:var(--dark); margin:14px 0; }
+  .plan .price small { font-size:.9rem; color:#8a90a3; font-weight:400; }
+  .plan ul { list-style:none; margin:18px 0; text-align:left; }
+  .plan li { padding:7px 0; border-bottom:1px dashed #e4e7f0; }
+  .plan li::before { content:"✓ "; color:var(--accent); font-weight:700; }
+  .badge { background:var(--accent); color:#fff; font-size:.75rem; padding:4px 14px;
+    border-radius:20px; font-weight:700; }
+
+  .rev { background:#fff; border-radius:18px; padding:28px; box-shadow:0 6px 20px rgba(14,21,48,.07); }
+  .rev p { font-style:italic; }
+  .rev .who { margin-top:14px; font-weight:700; color:var(--dark); }
+  .rev .score { color:var(--accent); font-weight:800; }
+
+  form { background:var(--dark); color:#fff; border-radius:24px; padding:50px 6%;
+    max-width:640px; margin:0 auto; text-align:center; }
+  form h2 { color:#fff; }
+  form input { width:100%; padding:15px; margin:10px 0; border-radius:12px; border:none;
+    font-size:1rem; }
+  form button { width:100%; margin-top:10px; border:none; cursor:pointer; }
+
+  footer { background:var(--dark); color:#8a93ad; text-align:center; padding:30px; font-size:.9rem; }
+
+  .reveal { opacity:0; transform:translateY(30px); transition:.7s; }
+  .reveal.on { opacity:1; transform:none; }
+  @media(max-width:640px){ .hero h1{font-size:2rem;} nav a{margin-left:12px;font-size:.8rem;} }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">ЕГЭ<span>ПРО</span></div>
+  <nav>
+    <a href="#courses">Курсы</a>
+    <a href="#price">Тарифы</a>
+    <a href="#reviews">Отзывы</a>
+    <a href="#contact">Записаться</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <h1>Сдай ЕГЭ на <em>90+ баллов</em> без репетиторов за 60 000 ₽/час</h1>
+  <p>Онлайн-школа с личным куратором, разбором каждой ошибки и гарантией результата. Занимайся откуда угодно — поступай куда хочешь.</p>
+  <a href="#contact" class="btn">Пробный урок бесплатно</a>
+  <div class="stat">
+    <div><b>87</b>средний балл учеников</div>
+    <div><b>12 400+</b>выпускников</div>
+    <div><b>94%</b>поступили на бюджет</div>
+  </div>
+</div>
+
+<section id="courses">
+  <h2 class="reveal">Почему выбирают нас</h2>
+  <div class="cards">
+    <div class="card reveal"><div class="num">01</div><h3>Личный куратор</h3><p>Проверяет домашку, следит за прогрессом и подгоняет, если лень побеждает.</p></div>
+    <div class="card reveal"><div class="num">02</div><h3>Только эксперты ЕГЭ</h3><p>Преподаватели — действующие эксперты проверки и авторы bank заданий ФИПИ.</p></div>
+    <div class="card reveal"><div class="num">03</div><h3>Разбор каждой ошибки</h3><p>Домашние задания проверяет человек, а не робот: с комментарием, где ты теряешь баллы.</p></div>
+    <div class="card reveal"><div class="num">04</div><h3>Гарантия результата</h3><p>Не набрал проходной балл — вернём деньги или занимайся второй год бесплатно.</p></div>
+  </div>
+</section>
+
+<section id="price">
+  <h2 class="reveal">Тарифы</h2>
+  <div class="price-grid">
+    <div class="plan reveal">
+      <h3>Самостоятельный</h3>
+      <div class="price">2 900 ₽ <small>/ мес</small></div>
+      <ul>
+        <li>Все видеолекции курса</li>
+        <li>Банк из 4 000+ задач</li>
+        <li>Чат поддержки 24/7</li>
+        <li>Доступ 12 месяцев</li>
+      </ul>
+      <a href="#contact" class="btn">Выбрать</a>
+    </div>
+    <div class="plan popular reveal">
+      <span class="badge">ХИТ</span>
+      <h3>С куратором</h3>
+      <div class="price">5 900 ₽ <small>/ мес</small></div>
+      <ul>
+        <li>Всё из тарифа «Самостоятельный»</li>
+        <li>Личный куратор и проверка ДЗ</li>
+        <li>Живые вебинары 2 раза в неделю</li>
+        <li>Пробники каждый месяц</li>
+      </ul>
+      <a href="#contact" class="btn">Выбрать</a>
+    </div>
+    <div class="plan reveal">
+      <h3>Максимум 90+</h3>
+      <div class="price">9 900 ₽ <small>/ мес</small></div>
+      <ul>
+        <li>Всё из тарифа «С куратором»</li>
+        <li>Индивидуальные занятия 4/мес</li>
+        <li>Стратегия поступления</li>
+        <li>Гарантия возврата денег</li>
+      </ul>
+      <a href="#contact" class="btn">Выбрать</a>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <h2 class="reveal">Отзывы выпускников</h2>
+  <div class="cards">
+    <div class="rev reveal"><p>«Начинала с 54 баллов на пробнике, в итоге профильная математика — 92. Куратор не давала спустить домашку ни разу.»</p><div class="who">Алина К.</div><div class="score">Математика: 92</div></div>
+    <div class="rev reveal"><p>«Занимался из маленького города, репетиторов нормальных не было. Русский — 96, общаг — 89, бюджет в СПбГУ.»</p><div class="who">Данил М.</div><div class="score">Русский: 96</div></div>
+    <div class="rev reveal"><p>«Больше всего зашли пробники с реальным таймером — на экзамене вообще не паниковала.»</p><div class="who">Софья В.</div><div class="score">Обществознание: 91</div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <form onsubmit="event.preventDefault(); this.innerHTML='<h2>Заявка принята!</h2><p style=color:#c4cde3>Мы свяжемся с вами в течение дня и подарим пробный урок.</p>';">
+    <h2>Запишись на бесплатный пробный урок</h2>
+    <p style="color:#c4cde3;margin-bottom:20px;">Определим уровень, составим план подготовки и честно скажем, на какой балл ты выходишь.</p>
+    <input type="text" placeholder="Имя" required>
+    <input type="tel" placeholder="Телефон или Telegram" required>
+    <button type="submit" class="btn">Получить урок</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 ЕГЭ ПРО — онлайн-школа подготовки к ЕГЭ · ИНН 0000000000 · Политика конфиденциальности
+</footer>
+
+<script>
+  const io = new IntersectionObserver(e => e.forEach(x => x.isIntersecting && x.target.classList.add('on')), {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
